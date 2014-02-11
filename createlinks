@@ -5,11 +5,11 @@ use File::Basename;
 use File::Path;
 
 #--------------------------------------------------
-# actions for nethserver-odbc-update event
+# actions for nethserver-unixODBC-update event
 #--------------------------------------------------
 
 my $event = "nethserver-unixODBC-update";
 
-templates2events("/etc/odbc.ini",$event);
+templates2events("/etc/odbc.ini",$event)
 templates2events("/etc/odbcinst.ini",$event);
 
