@@ -1,0 +1,49 @@
+Summary: NethServer module to configure ODBC
+Name: nethserver-odbc
+Version: @@VERSION@@
+Release: @@RELEASE@@
+License: GPL
+Group: Networking/Daemons
+Source: %{name}-%{version}.tar.gz
+Packager: Stefano Fancello <stefano.fancello@nethesis.it>
+BuildArch: noarch
+Requires: unixODBC
+BuildRequires: nethserver-devtools
+AutoReq: no
+
+%description
+NethServer module to configure ODBC
+
+
+%prep
+%setup
+
+%pre
+
+%post
+
+%preun
+
+%postun
+
+%build
+perl createlinks
+
+%install
+/bin/rm -rf $RPM_BUILD_ROOT
+(cd root   ; /usr/bin/find . -depth -print | /bin/cpio -dump $RPM_BUILD_ROOT)
+/bin/rm -f %{name}-%{version}-filelist
+
+/sbin/e-smith/genfilelist \
+    $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
+echo "%doc COPYING"          >> %{name}-%{version}-filelist
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f %{name}-%{version}-%{release}-filelist
+%defattr(0644,root,root)
+
+%changelog
+* Mon Feb 10 2014 Stefano Fancello <stefano.fancello@nethesis.it> - 0.0.1-1
+- First package
