@@ -8,6 +8,8 @@ Source: %{name}-%{version}.tar.gz
 Packager: Stefano Fancello <stefano.fancello@nethesis.it>
 BuildArch: noarch
 Requires: unixODBC
+Requires: mysql-connector-odbc
+Requires: postgresql-odbc
 BuildRequires: nethserver-devtools
 AutoReq: no
 
