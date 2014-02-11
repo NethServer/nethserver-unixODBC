@@ -3,14 +3,14 @@
     use esmith::db;
 
     my %c;
-    tie %c, 'esmith::config', '/home/e-smith/db/configuration';
+    tie %c, 'esmith::config', '/var/lib/nethserver/db/configuration';
 
     $OUT = '';
     my @records = ();
     foreach (sort keys %c)
     {
        push (@records, $_)
-         if (db_get_type(\%c, $_) eq 'ODBC');
+         if (db_get_type(\%c, $_) eq 'ODBC' || db_get_type(\%c, $_) eq 'odbc');
     }
 
     #if they have records add them to the templete
@@ -33,4 +33,5 @@
     }
 
 }
+
 
