@@ -10,6 +10,6 @@ use File::Path;
 
 my $event = "nethserver-unixODBC-update";
 
-templates2events("/etc/odbc.ini",$event)
+templates2events("/etc/odbc.ini",$event);
 templates2events("/etc/odbcinst.ini",$event);
 
