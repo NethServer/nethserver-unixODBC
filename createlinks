@@ -12,5 +12,5 @@ my $event = "nethserver-unixODBC-update";
 
 templates2events("/etc/odbc.ini",$event);
 templates2events("/etc/odbcinst.ini",$event);
-event_link("nethserver-unixODBC-install","nethserver-unixODBC-update","50");
+event_link("nethserver-unixODBC-conf","nethserver-unixODBC-update","50");
 
