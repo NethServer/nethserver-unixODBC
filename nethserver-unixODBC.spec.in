@@ -10,6 +10,7 @@ BuildArch: noarch
 Requires: unixODBC
 Requires: mysql-connector-odbc
 Requires: postgresql-odbc
+Requires: nethserver-base
 BuildRequires: nethserver-devtools
 AutoReq: no
 
