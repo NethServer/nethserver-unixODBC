@@ -8,6 +8,7 @@ Source: %{name}-%{version}.tar.gz
 Packager: Stefano Fancello <stefano.fancello@nethesis.it>
 BuildArch: noarch
 Requires: unixODBC
+Requires: freetds
 Requires: mysql-connector-odbc
 Requires: postgresql-odbc
 Requires: nethserver-base
@@ -48,8 +49,3 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644,root,root)
 
 %changelog
-* Tue Jun 24 2014 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.0.5-1.ns6
-- First release - Feature #2781
-
-* Mon Feb 10 2014 Stefano Fancello <stefano.fancello@nethesis.it> - 0.0.1-1
-- First package
