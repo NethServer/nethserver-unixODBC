@@ -1,0 +1,5 @@
+[MSSQL]
+Description = Microsoft SQL Server
+Driver = /usr/lib64/libtdsodbc.so.0
+UsageCount = 4
+
