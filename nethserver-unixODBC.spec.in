@@ -49,6 +49,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(0644,root,root)
 
 %changelog
+* Wed Jan 21 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.0.7-1.ns6
+- Add MSSQL support in nethserver-unixODBC - Feature #3003 [NethServer]
+
 * Tue Nov 11 2014 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.0.6-1.ns6
 * Missing dependency nethserver-base - Refs #2950
 
