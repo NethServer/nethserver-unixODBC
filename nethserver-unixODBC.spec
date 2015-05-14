@@ -3,50 +3,36 @@ Name: nethserver-unixODBC
 Version: 0.0.7
 Release: 1
 License: GPL
-Group: Networking/Daemons
 Source: %{name}-%{version}.tar.gz
-Packager: Stefano Fancello <stefano.fancello@nethesis.it>
+URL: %{url_prefix}/%{name}
 BuildArch: noarch
+
 Requires: unixODBC
 Requires: freetds
 Requires: mysql-connector-odbc
 Requires: postgresql-odbc
 Requires: nethserver-base
 BuildRequires: nethserver-devtools
-AutoReq: no
 
 %description
 NethServer module with ODBC configuration templates
 
-
 %prep
 %setup
-
-%pre
-
-%post
-
-%preun
-
-%postun
 
 %build
 perl createlinks
 
 %install
-/bin/rm -rf $RPM_BUILD_ROOT
-(cd root   ; /usr/bin/find . -depth -print | /bin/cpio -dump $RPM_BUILD_ROOT)
-/bin/rm -f %{name}-%{version}-filelist
-
-/sbin/e-smith/genfilelist \
-    $RPM_BUILD_ROOT > %{name}-%{version}-%{release}-filelist
-echo "%doc COPYING"          >> %{name}-%{version}-filelist
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+/bin/rm -rf %{buildroot}
+(cd root   ; /usr/bin/find . -depth -print | /bin/cpio -dump %{buildroot})
+%{genfilelist} %{buildroot} > %{name}-%{version}-%{release}-filelist
 
 %files -f %{name}-%{version}-%{release}-filelist
 %defattr(0644,root,root)
+%doc COPYING
+%dir %{_nseventsdir}/%{name}-update
+
 
 %changelog
 * Wed Jan 21 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.0.7-1.ns6
