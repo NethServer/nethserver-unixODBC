@@ -1,7 +1,7 @@
 Summary: NethServer module with ODBC configuration templates
 Name: nethserver-unixODBC
 Version: 0.0.7
-Release: 1
+Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
 URL: %{url_prefix}/%{name}
