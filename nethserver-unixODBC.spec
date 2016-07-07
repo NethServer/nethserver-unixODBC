@@ -1,6 +1,6 @@
 Summary: NethServer module with ODBC configuration templates
 Name: nethserver-unixODBC
-Version: 0.0.7
+Version: 1.0.0
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -35,6 +35,9 @@ perl createlinks
 
 
 %changelog
+* Thu Jul 07 2016 Stefano Fancello <stefano.fancello@nethesis.it> - 1.0.0-1
+- First NS7 release
+
 * Wed Jan 21 2015 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 0.0.7-1.ns6
 - Add MSSQL support in nethserver-unixODBC - Feature #3003 [NethServer]
 
